@@ -3,47 +3,47 @@ package com.snake;
 public class TwoPlayerGame {
 
 		public static final int Ladder = 1;
-	    public static final int Snake =2;
-	    public static final int Max = 6, Min = 1;
+	        public static final int Snake =2;
+	        public static final int Max = 6, Min = 1;
 
 	    public static void main(String[] args) {
-	        int DiceRolled1 = 0, DiceRolled2 = 0;
-	        int RandNum = 0;
+	        int diceRolled1 = 0, diceRolled2 = 0;
+	        int randNum = 0;
 	        System.out.println("welcome player1 and player2");
-	        DiceRolled1 = game(DiceRolled1 , RandNum);
-	        DiceRolled2 = game(DiceRolled2 , RandNum);
-	        int Diff = DiceRolled1 - DiceRolled2;
-	        if(Diff <= 0)
+	        diceRolled1 = game(diceRolled1 , randNum);
+	        diceRolled2 = game(diceRolled2 , randNum);
+	        int diff = diceRolled1 - diceRolled2;
+	        if(diff <= 0)
 	            System.out.println("player1 is the winner");
 	        else
 	            System.out.println("player2 is the winner");
 	    }
 
-	    public static int game(int DiceRolled, int RandNum) {
-	        DiceRolled = 0;
-	        int Position = 0;
-	        while (Position < 100) {
-	            RandNum = (int) Math.floor(Math.random() * (Max - Min + 1) + Min);
-	            DiceRolled += 1;
-	            int TempPosition = (int) Math.floor(Math.random() * 10) % 3;
-	            if(TempPosition == 1)
-	                DiceRolled -=1;
-	            switch (TempPosition) {
+	    public static int game(int diceRolled, int randNum) {
+	        diceRolled = 0;
+	        int position = 0;
+	        while (position < 100) {
+	            randNum = (int) Math.floor(Math.random() * (Max - Min + 1) + Min);
+	            diceRolled += 1;
+	            int option = (int) Math.floor(Math.random() * 10) % 3;
+	            if(option == 1)
+	                diceRolled -=1;
+	            switch (option) {
 	                case Ladder:
-	                    Position += RandNum;
-	                    if (Position > 100)
-	                        Position -= RandNum;
-	                    break;
+	                            position += randNum;
+	                            if (position > 100)
+	                            position -= randNum;
+	                            break;
 	                case Snake:
-	                    Position -= RandNum;
-	                    if (Position < 0)
-	                        Position = 0;
-	                    break;
-	                default:
-	                    break;
+	                            position -= randNum;
+	                            if (position < 0)
+	                            position = 0;
+	                            break;
+	                   default:
+	                           
 	            }
 	        }
-	    return DiceRolled;
+	         return diceRolled;
 
 	}
 
