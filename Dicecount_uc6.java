@@ -2,17 +2,17 @@ package com.snake;
 
 public class Dicecount_uc6 {
 
-		public static final int Ladder = 1;
+	    public static final int Ladder = 1;
 	    public static final int Snake = 2;
 
 	    public static void main(String[] args) {
 	        //constants
 	        int position = 0;
-	        int Win_Position = 100;
+	        int wiPosition = 100;
 	        int counter=0;
 	        System.out.println("Welcome Player number 1");
 	        //Loop Execute until we rich to the win position
-	        while (position < Win_Position) {
+	        while (position < winPosition) {
 
 	            int dice_roll = (int) ((Math.random() * 10) % 6 + 1);
 	            counter++;
@@ -23,7 +23,7 @@ public class Dicecount_uc6 {
 	            switch (option) {
 	                case Ladder:
 	                    position += dice_roll;
-	                    if (position > Win_Position)
+	                    if (position > winPosition)
 	                        position -= dice_roll;
 	                    System.out.println("Current Position= "+position);
 	                    break;
@@ -39,7 +39,7 @@ public class Dicecount_uc6 {
 
 	        }
 	        System.out.println("number of time dice roll= "+counter);
-	        if (position == Win_Position)
+	        if (position == winPosition)
 	            System.out.println("yeahh win");
 	    }
 
